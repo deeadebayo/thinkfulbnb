@@ -1,119 +1,207 @@
 /* -------  General Styles ------- */
 
 body {
-  font-family: "Lato", sans-serif;
+    font-family: "Lato", sans-serif;
+    scroll-behavior: smooth;
+    @media screen and (prefers-reduced-motion: reduce) {
+        scroll-behavior: auto;
+    }
 }
 
 h2 {
-  font-size: 26px;
-  font-weight: 400;
-  margin: 0 10px 10px 10px;
-  text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0 10px 10px 10px;
+    text-align: center;
 }
 
 h3 {
-  font-size: 18px;
-  font-weight: 500;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 p {
-  line-height: 1.5em;
-  margin: 0;
+    line-height: 1.5em;
+    margin: 0;
 }
 
 section {
-  padding: 20px;
+    padding: 20px;
 }
 
-section.alternate-background {
-  background-color: #00a699;
-  color: #fff;
-}
-
-main img {
-  width: 100px;
-}
 
 /* ---  Groups & Items --- */
 
 .group {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .item {
-  flex: 1;
-  margin: 10px;
+    flex: 1;
+    margin: 10px 0;
 }
 
-.item-double {
-  flex: 2;
-}
 
 /* -------  Navigation ------- */
 
 header {
-  background-color: #ff385c;
-  padding: 20px 20px 0 20px;
-  text-align: center;
+    background-color: #ff385c;
+    padding: 20px 20px 0 20px;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .logo {
-  font-family: "Pangolin", cursive;
-  font-size: 72px;
-  color: #fff;
+    font-family: "Pangolin", cursive;
+    font-size: 72px;
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
 }
 
 header nav ul li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0 20px 0 0;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px 0 0;
 }
 
 header nav ul li a:hover {
-  color: #bdbdbd;
-  text-decoration: none;
+    color: #bdbdbd;
+    text-decoration: none;
 }
 
+@media screen and (min-width: 481px) {
+    header {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
 /* -------  Search Form ------- */
+
 form {
-  border: 2px solid #ff385c;
-  padding: 10px;
+    border: 2px solid #ff385c;
+    padding: 10px;
 }
 
 form label {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 form select,
 form input {
-  margin-bottom: 20px;
-  width: 180px;
+    max-width: 180px;
 }
 
 form button {
-  background-color: #ff385c;
-  border: none;
-  color: #fff;
-  font-size: 24px;
-  padding: 15px;
-  width: 100%;
+    background-color: #ff385c;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 15px;
+    width: 100%;
+    flex: 1;
 }
+
+.form-flex {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.form-flex>div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: .2rem;
+}
+
+@media screen and (min-width: 997px) {
+    .form-flex {
+        flex-flow: row nowrap;
+    }
+}
+
+
+/* ---  About Section --- */
+
+section.alternate-background {
+    background-color: #00a699;
+    color: #fff;
+}
+
+.alternate-background--flex {
+    justify-content: center;
+}
+
+main img {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 481px) {
+    .container--about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-gap: .5rem;
+        align-items: center;
+    }
+}
+
+
+/* ---  Ideas Section --- */
+
+@media screen and (min-width: 481px) {
+    .ideas__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem;
+    }
+}
+
+
+/* ---  Host Section --- */
+
+.host {
+    display: flex;
+}
+
+.container__host {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+@media screen and (min-width: 481px) {
+    .container__host {
+        flex-flow: row wrap;
+    }
+    .container__host>div {
+        align-self: center;
+        flex: 1 1 0px;
+    }
+}
+
 
 /* -------  Footer ------- */
 
 footer {
-  background-color: #ff385c;
+    background-color: #ff385c;
 }
 
 footer p {
-  color: #fff;
-  text-align: center;
-  padding: 20px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
 }
-
-/* -------  Media Query ------- */
