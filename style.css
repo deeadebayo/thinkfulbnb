@@ -118,6 +118,7 @@ form button {
 	display: flex;
 	justify-content: space-between;
 	margin: .2rem;
+    flex-flow: column;
 }
 
 /* ---  About Section --- */
@@ -189,6 +190,10 @@ footer p {
 		align-self: center;
 		flex: 1 1 0px;
 	}
+
+    .form-flex > div {
+    flex-flow: row;
+}
 }
 
 @media screen and (min-width: 997px) {
